@@ -13,7 +13,38 @@
     <!-- <p id="shodiena" style="color: rgb(59, 117, 194); background-color: orange;">16/9/2021 18:39</p>  -->
     <!-- rgb(223, 232, 245) -->
     <h3>Mans pulkstenis</h3>
-    <p id="shodiena" style="color: #ddd; background-color: orange;">16/9/2021 18:55</p> 
+    <div id="shodiena" style="color: #ddd; background-color: orange;">16/9/2021 18:55</div> 
+    <script type="text/javascript">
+    setInterval(displayclock,500);
+            function displayclock () {
+                var time = new Date();
+                var hrs = time.getHours();
+                var min = time.getMinutes();
+                var sec = time.getSeconds();
+
+                if (hrs > 24) {
+                    hrs = hrs - 24;
+                }
+
+                if (hrs == 0) {
+                    hrs = 24;
+                }
+
+                if (hrs < 10) {
+                    hrs = '0' + hrs;
+                }
+
+                if (min < 10) {
+                    min = '0'+ min;
+                }
+
+                if (sec < 10) {
+                    sec = '0'+ sec;
+                }
+
+                document.getElementById('shodiena').innerHTML = hrs + ':' + min + ':' + sec;
+            }
+    </script>
     <style>
         body {
             background-color: green;
